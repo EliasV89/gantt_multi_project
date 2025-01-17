@@ -1,1 +1,2 @@
-python run_script.py
+python script_gantt.py
+PAUSE

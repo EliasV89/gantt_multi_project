@@ -3,6 +3,7 @@ import pandas as pd
 from matplotlib.dates import date2num, DateFormatter
 import matplotlib.dates as mdates
 from datetime import datetime
+import os
 
 
 # Define your custom color palette for phases
@@ -138,7 +139,8 @@ def plot_gantt(df):
 
     # Save the plot with a dynamic filename that includes the current date
     todays_date = datetime.today().strftime('%Y-%m-%d')
-    plt.savefig(f'output/projects_timeline_{todays_date}.png', dpi=150)
+    cwd = os.getcwd()
+    plt.savefig(f'{cwd}/output/projects_timeline_{todays_date}.png', dpi=150)
 
 # Plot the Gantt chart
 plot_gantt(df)
